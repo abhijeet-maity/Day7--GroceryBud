@@ -1,0 +1,103 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.App{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box{
+    width: 30rem;
+    box-shadow: rgba(0, 0, 0, 0.30) 0px 1px 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.input-MainBox{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.input-box{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.input-box input{
+width: 80%;
+padding: 6px;
+border: 1px solid #d2cece;
+border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  outline: none;
+}
+.additem{
+  padding: 6px 10px;
+  width: 20%;
+  background: #06b6d4;
+  border: 1px solid #06b6d4;
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+.additem:hover{
+  background: #028299;
+  border: 1px solid #028299;
+}
+
+.text-box{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1rem;
+}
+.check-box{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  word-break: break-all;
+  width: 75%;
+}
+.deleteBtn{
+  padding: 5px 10px;
+  width: 20%;
+  border: none;
+  background-color: black;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  height: 25px;
+}
+.deleteBtn:hover{
+  background-color:rgb(75 73 73);
+}
+
+@media screen and (max-width:425px){
+  .box{
+    width: 90% !important;
+  }
+  .input-box input{
+    width: 60% !important;
+  }
+  .additem{
+    width: 40% !important;
+  }
+  .deleteBtn{
+    width: 40% !important;
+  }
+}
