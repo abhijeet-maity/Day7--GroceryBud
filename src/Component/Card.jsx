@@ -74,8 +74,15 @@ function Card() {
     useEffect(()=>{
       localStorage.setItem('data', JSON.stringify(filterData))
     },[filterData])
+ 
 
-   
+   const [checkList, setCheckList] = useState(Array(filterData.length).fill(false));
+
+   const fun = (index) => {
+       const newCheckList = [...checkList];
+       newCheckList[index] = !newCheckList[index];
+       setCheckList(newCheckList);
+   }
    
 
    return (
@@ -103,8 +110,9 @@ theme="light"/>
             filterData.map((elem,index)=>(
             <div className='text-box'>
                 <div className='check-box'>
-                  <input type='checkbox'/>
-                  <p>{elem}</p>
+                <input type='checkbox' checked={checkList[index]} onChange={() => fun(index)} />
+                 <p className='para' style={{ textDecoration: checkList[index] ? 'line-through' : 'none' }}>{elem}</p>
+
                 </div>
                    <button className='deleteBtn' onClick={()=>deleteBtn(elem,index)}>delete</button> 
                   
