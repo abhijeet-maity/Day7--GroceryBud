@@ -5,6 +5,12 @@ import 'react-toastify/dist/ReactToastify.css';
 function Card() {
     let [data,setData]=useState('');
     let [filterData,setFilterData]=useState([])
+ useEffect(()=>{
+      let item=JSON.parse(localStorage.getItem('data'));
+      if(item){
+        setData(item)
+      }
+    },[])
    
     const search = (e) => {
         setData(e.target.value);
@@ -64,12 +70,7 @@ function Card() {
         
         
     };
-    useEffect(()=>{
-      let item=JSON.parse(localStorage.getItem('data'));
-      if(item){
-        setData(item)
-      }
-    },[])
+   
 
     useEffect(()=>{
       localStorage.setItem('data', JSON.stringify(filterData))
