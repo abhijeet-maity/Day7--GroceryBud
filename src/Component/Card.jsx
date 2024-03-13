@@ -27,7 +27,7 @@ function Card() {
         setData(e.target.value);
     };
 
-    const addItemToList = () => {
+    function addItemToList(){
         if (data.trim() === '') {
             toast.error('Please provide a value', { position: 'top-center' });
         } else {
@@ -35,19 +35,19 @@ function Card() {
             setData('');
             toast.success('Item added to the list', { position: 'top-center' });
         }
-    };
+    }
 
-    const deleteItem = (elem, index) => {
+    function deleteItem (elem, index) {
         const newFilterData = localStoragedData.filter((e, idx) => idx !== index);
         setLocalStorage(newFilterData);
         toast.success('Item deleted', { position: 'top-center' });
-    };
+    }
 
-    const toggleCheck = (index) => {
+    function toggleCheck (index) {
         const newCheckList = [...checkList];
         newCheckList[index] = !newCheckList[index];
         setCheckList(newCheckList);
-    };
+    }
 
     return (
         <div className='box'>
